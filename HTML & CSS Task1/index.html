@@ -31,12 +31,12 @@ body {
     width: 100%;
     
 }
-.leftSide header {
+header {
     padding-top: 100px;
     padding-left: 200px;
 }
 
-.leftSide header .logo {
+header .logo {
     height: 50px;
 
 }
@@ -61,7 +61,7 @@ body {
     color: hsl(0, 36%, 70%);
     line-height: 1.6;
     padding-left: 200px;
-    padding-right: 300px;
+    padding-right: 330px;
     padding-top: 30px;
 }
 form{
@@ -79,7 +79,7 @@ form{
 
 input {
     flex: 1;
-    padding: 1rem 1.5rem;
+    padding: 18px 22px;
     border: none;
     background: transparent;
     font-family: inherit;
@@ -102,31 +102,120 @@ button:hover {
     box-shadow: 0 10px 15px rgba(0,0,0,0.1);
 }
 
-.error-message {
-    color: #f96262;
-    font-size: 0.8rem;
-    margin-top: 0.5rem;
-    padding-left: 1.5rem;
-    display: none;
-}
-/* On screens that are 992px or less, set the background color to blue */
-@media screen and (max-width: 992px) {
-    body {
-    background-color: blue;
-    }
-    .container{
-    display: grid;
-}
+
+@media (max-width: 992px) {
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* On screens that are 600px or less, set the background color to olive */
-@media screen and (max-width: 600px) {
-    body {
-    background-color: olive;
-    }
-    .container{
-    display: grid;
+body {
+    font-family: 'Josefin Sans', sans-serif;
+    min-height: 100vh;
 }
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+header {text-align: left;
+    padding: 40px 30px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    display: block;
+    background-color: white;
+}
+
+.logo {
+    height: 150px;
+}
+.rightSide{
+    width: 100%;
+    height: 40vh;
+    background-image: url('images/hero-mobile.jpg');
+    background-size: cover;
+    background-position: top;
+    order: -1; 
+    margin-top: 120px;
+}
+.leftSide{
+    text-align: center;
+    max-width: 100%;
+    
+}
+.leftSide h1 {
+    padding: 0;
+    padding-top: 60px;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 15px;
+    line-height: 1.1;
+    font-weight: 600;
+    color: hsl(0, 6%, 24%);
+}
+
+h1 span {
+    color: hsl(0, 36%, 70%);
+    font-weight: 300;
+}
+
+.leftSide p {
+    padding-left: 90px;
+    padding-right: 90px;
+    padding-top: 60px;
+    color: hsl(0, 36%, 70%);
+    line-height: 1.6;
+    font-size: 0.9rem;
+}
+
+form{
+    padding-left: 90px;
+    padding-right: 90px;
+    padding-top: 40px;
+    padding-bottom: 60px;
+}
+.input-group {
+    position: relative;
+    display: flex;
+    border: 1px solid #ce9797;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 40px;
+}
+
+input {
+    flex: 1;
+    padding: 18px 22px;
+    border: none;
+    background: transparent;
+    font-family: inherit;
+    font-size: 0.9rem;
+}
+
+input::placeholder {
+    color: #ce9797;
+    opacity: 0.5;
+}
+
+button {
+    background: linear-gradient(135deg, #f8bfbf, #ee8c8c);
+    border: none;
+    padding: 0 30px;
+    border-radius: 20px;
+
+}
+
+button:hover {
+    background: #f8bfbf;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+
+
 }
     </style>
 </head>
@@ -138,8 +227,8 @@ button:hover {
                 <img src="images/logo.svg" alt="Base Apparel" class="logo">
             </header>
             <h1><span>WE'RE</span><br> COMING<br>SOON</h1>
-            <p>Hello fellow shoppers! We're currently building our newfashion store. 
-                Add your email below to stay up-to-date withannouncements and our launch deals.</p>
+            <p>Hello fellow shoppers! We're currently building our new fashion store. 
+                Add your email below to stay up-to-date with announcements and our launch deals.</p>
                 <form id="email-form">
                     <div class="input-group">
                         <input type="email" id="email" placeholder="Email Address" required>
@@ -147,7 +236,6 @@ button:hover {
                             <img src="images/icon-arrow.svg" alt="Submit">
                         </button>
                     </div>
-                    <span class="error-message">Please provide a valid email</span>
                 </form>
         </div>
         
